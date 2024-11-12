@@ -2,6 +2,8 @@
 import { NextResponse } from 'next/server';
 import { generateLicense } from '../utils/generateLicense';
 
+export const dynamic = "force-dynamic"; // This allows dynamic handling of the route
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const level = searchParams.get('level');

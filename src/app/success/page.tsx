@@ -1,29 +1,12 @@
 'use client'
 
-import React, { Suspense, useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import React, { Suspense } from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Check, Copy } from 'lucide-react';
-
-interface OrderData {
-  success: boolean;
-  data?: {
-    sessionId: string;
-    customerEmail: string;
-    productName: string;
-    keyAuthLevel: string;
-    licenseKey: string;
-    paymentStatus: string;
-  };
-  error?: string;
-}
+import { Check } from 'lucide-react';
 
 function SuccessPageContent() {
-  const searchParams = useSearchParams();
-  const [status, setStatus] = useState<'success' | 'error'>('success');
-  
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-muted/50 p-6">
       <Card className="w-full max-w-md">
